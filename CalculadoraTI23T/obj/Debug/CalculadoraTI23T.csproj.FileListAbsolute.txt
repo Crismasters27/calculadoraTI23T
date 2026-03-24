@@ -1,0 +1,8 @@
+C:\Users\cristiano.sraimundo\source\repos\CalculadoraTI23T\CalculadoraTI23T\bin\Debug\CalculadoraTI23T.exe.config
+C:\Users\cristiano.sraimundo\source\repos\CalculadoraTI23T\CalculadoraTI23T\bin\Debug\CalculadoraTI23T.exe
+C:\Users\cristiano.sraimundo\source\repos\CalculadoraTI23T\CalculadoraTI23T\bin\Debug\CalculadoraTI23T.pdb
+C:\Users\cristiano.sraimundo\source\repos\CalculadoraTI23T\CalculadoraTI23T\obj\Debug\CalculadoraTI23T.csproj.AssemblyReference.cache
+C:\Users\cristiano.sraimundo\source\repos\CalculadoraTI23T\CalculadoraTI23T\obj\Debug\CalculadoraTI23T.csproj.CoreCompileInputs.cache
+C:\Users\cristiano.sraimundo\source\repos\CalculadoraTI23T\CalculadoraTI23T\obj\Debug\CalculadoraTI23T.exe
+C:\Users\cristiano.sraimundo\source\repos\CalculadoraTI23T\CalculadoraTI23T\obj\Debug\CalculadoraTI23T.pdb
+C:\Users\cristiano.sraimundo\source\repos\CalculadoraTI23T\CalculadoraTI23T\obj\Debug\CalculadoraTI23T.exe.config
