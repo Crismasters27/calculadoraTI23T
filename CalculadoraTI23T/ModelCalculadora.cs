@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -334,6 +335,225 @@ namespace CalculadoraTI23T
             }
 
             return soma / numeros.Length;
+        }
+
+        //Exercicio 12
+        public string somarAteUltrapassar100()
+        {
+            double soma = 0;
+            double numero;
+
+            do
+            {
+                Console.Write("Digite um número: ");
+                numero = Convert.ToDouble(Console.ReadLine());
+
+                soma += numero;
+
+                Console.WriteLine($"Soma atual: {soma}");
+
+            } while (soma <= 100);
+
+            return $"A soma ultrapassou 100! Total final: {soma}";
+        }
+
+        //Exercicio 13
+        public void solicitarSenha()
+        {
+            string senha;
+            string resposta;
+
+            do
+            {
+                Console.Write("Digite a senha: ");
+                senha = Console.ReadLine();
+
+                resposta = validarSenha(senha);
+                Console.WriteLine(resposta);
+
+            } while (resposta != "Senha válida!");
+        }
+
+
+        //Exercicio 14
+        public string definirMaiorMenor()
+        {
+            int num = 0;
+            int maior = 0;
+            int menor = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"{i + 1}º Número: ");
+                num = Convert.ToInt32(Console.ReadLine());
+
+                //Instanciar
+                if (i == 0)
+                {
+                    maior = num;
+                    menor = num;
+                }
+
+                //Comparação
+                if (num > maior)
+                {
+                    maior = num;
+                }
+                if (num < menor)
+                {
+                    menor = num;
+                }
+            }//fim do for
+        return $" O maior é: {maior} e o menor é: {menor}";
+
+        }//fim do método
+
+        //Exercício 15
+        public string classificarIdade(int idade)
+        {
+            if (idade < 0)
+            {
+                return "Idade inválida";
+            }
+            else if (idade <= 12)
+            {
+                return "Criança";
+            }
+            else if (idade <= 17)
+            {
+                return "Jovem";
+            }
+            else if (idade <= 59)
+            {
+                return "Adulto";
+            }
+            else
+            {
+                return "Idoso";
+            }
+        }
+
+        //Exercicio 16
+        public string calcularIMC(double peso, double altura)
+        {
+            if (altura <= 0 || peso <= 0)
+            {
+                return "Valores inválidos";
+            }
+
+            double imc = peso / (altura * altura);
+            string classificacao;
+
+            if (imc < 18.5)
+            {
+                classificacao = "Abaixo do peso";
+            }
+            else if (imc < 25)
+            {
+                classificacao = "Peso normal";
+            }
+            else if (imc < 30)
+            {
+                classificacao = "Sobrepeso";
+            }
+            else if (imc < 35)
+            {
+                classificacao = "Obesidade I";
+            }
+            else if (imc < 40)
+            {
+                classificacao = "Obesidade II";
+            }
+            else
+            {
+                classificacao = "Obesidade III";
+            }
+
+            return $"IMC: {imc:F2} - {classificacao}";
+        }
+
+        //Exercicio 17
+        public string verificarNumero(double num)
+        {
+            if (num > 0)
+            {
+                return "Número positivo";
+            }
+            else if (num < 0)
+            {
+                return "Número negativo";
+            }
+            else
+            {
+                return "Número zero";
+            }
+        }
+
+        //Exercicio 18
+        public string verificarParOuImpar(int num)
+        {
+            if (num % 2 == 0)
+            {
+                return "Número par";
+            }
+            else
+            {
+                return "Número ímpar";
+            }
+        }
+
+        //Exercicio 19
+        public string analisarTresNumeros(double numero1, double numero2, double numero3)
+        {
+            // Maior
+            double maior = numero1;
+            if (numero2 > maior) maior = numero2;
+            if (numero3 > maior) maior = numero3;
+
+            // Menor
+            double menor = numero1;
+            if (numero2 < menor) menor = numero2;
+            if (numero3 < menor) menor = numero3;
+
+            // Soma
+            double soma = numero1 + numero2 + numero3;
+
+            // Média
+            double media = soma / 3;
+
+            // Potência (exemplo: numero1 elevado a numero2)
+            double potencia = Math.Pow(numero1, numero2);
+
+            return $"Maior: {maior}\n" +
+                   $"Menor: {menor}\n" +
+                   $"Soma: {soma}\n" +
+                   $"Média: {media:F2}\n" +
+                   $"Potência (numero1^numero2): {potencia}";
+        }
+
+        //Exercicio 20
+        public string calcularTarifa(int idade2, double tarifaBase)
+        {
+            if (idade2 < 0)
+            {
+                return "Idade inválida";
+            }
+            else if (idade2 <= 5)
+            {
+                return "Tarifa: Gratuita";
+            }
+            else if (idade2 <= 17)
+            {
+                double meia = tarifaBase / 2;
+                return $"Tarifa: Meia ({meia:F2})";
+            }
+            else if (idade2 <= 59)
+            {
+                return $"Tarifa: Normal ({tarifaBase:F2})";
+            }
+            else
+            {
+                return "Tarifa: Gratuita";
+            }
         }
 
     }//fim da classe Model

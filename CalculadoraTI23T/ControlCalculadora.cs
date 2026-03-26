@@ -44,11 +44,22 @@ namespace CalculadoraTI23T
                 "12. Verificar número em intervalo\n" +
                 "13. Top 10 maiores valores\n" +
                 "14. Verificar tipo de triângulo\n" +
-                "15. Informe o dia da semana\n"+
-                "16. Validar senha\n"+
-                "17. Comparar dois horários\n"+
-                "18. Mostrar o maior número"+
-                "19. Calcular média de 5 números\n";
+                "15. Informe o dia da semana\n" +
+                "16. Validar senha\n" +
+                "17. Comparar dois horários\n" +
+                "18. Mostrar o maior número\n" +
+                "19. Calcular média de 5 números\n" +
+                "20. Somar até ultrapassar 100\n" +
+                "21. Solicitar senha até que uma seja válida\n"+
+                "22. Ler 10 números e mostrar maior e menor\n" +
+                "23. Classificar pessoa por idade\n" +
+                "24. Calcular IMC\n" +
+                "25. Verificar se número é positivo, negativo ou zero\n" +
+                "26. Verificar par ou ímpar\n" +
+                "27. Analisar três números\n"+
+                "28. Calcule a tarifa do ônibus";
+
+
         }//fim do método
 
         public void realizarOperacao()
@@ -208,6 +219,64 @@ namespace CalculadoraTI23T
                         double media = this.model.calcularMedia(numeros);
                         Console.WriteLine($"A média dos números é: {media}");
                         break;
+                    case 20:
+                        Console.WriteLine(this.model.somarAteUltrapassar100());
+                        break;
+                    case 21:
+                        this.model.solicitarSenha();
+                        break;
+                    case 22:
+                        Console.WriteLine(this.model.definirMaiorMenor());
+                        break;
+                    case 23:
+                        Console.Write("Digite a idade: ");
+                        int idadePessoa = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine(this.model.classificarIdade(idadePessoa));
+                        break;
+                    case 24:
+                        Console.Write("Digite o peso (kg): ");
+                        double peso = Convert.ToDouble(Console.ReadLine());
+
+                        Console.Write("Digite a altura (m): ");
+                        double altura = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine(this.model.calcularIMC(peso, altura));
+                        break;
+                    case 25:
+                        Console.Write("Digite um número: ");
+                        double numeros1 = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine(this.model.verificarNumero(numeros1));
+                        break;
+                    case 26:
+                        Console.Write("Digite um número: ");
+                        int numeroPar = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine(this.model.verificarParOuImpar(numeroPar));
+                        break;
+                    case 27:
+                        Console.Write("Digite o primeiro número: ");
+                        double numero1 = Convert.ToDouble(Console.ReadLine());
+
+                        Console.Write("Digite o segundo número: ");
+                        double numero2 = Convert.ToDouble(Console.ReadLine());
+
+                        Console.Write("Digite o terceiro número: ");
+                        double numero3 = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine(this.model.analisarTresNumeros(numero1, numero2, numero3));
+                        break;
+                    case 28:
+                        Console.Write("Digite a idade: ");
+                        int idade2 = Convert.ToInt32(Console.ReadLine());
+
+                        Console.Write("Digite o valor da tarifa base: ");
+                        double tarifa = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine(this.model.calcularTarifa(idade2, tarifa));
+                        break;
+
                 }//fim do escolha
             } while (opcao != 0);
         }//fim do método
